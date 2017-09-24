@@ -27,18 +27,6 @@ public class ManipulaDirectorio {
         return this.directorio.removerNodo(new Contacto(nombre, 0, "", ""));
     }
     
-    /*public String preorden(Nodo raiz1) {
-        String m = "";
-        if (raiz1 != null) {
-            m = m + raiz1.getDatos().getNOMBRE() + ", ";
-            m = m + preorden(raiz1.getHijoIzq());
-            m = m + preorden(raiz1.getHijoDer());
-        }
-        return m;
-    }*/
-    
-    
-    
     public ArrayList inorden(){
         this.directorio.in(this.directorio.getRaiz());
         return this.directorio.getrecorridos();

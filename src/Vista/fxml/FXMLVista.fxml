@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vista.controller.FXMLVistaController">
+    <children>
+        <ImageView fitHeight="793.0" fitWidth="565.0" preserveRatio="true">
+            <image>
+                <Image url="@../ph_720x750.png" />
+            </image>
+            <viewport>
+                <Rectangle2D height="675.0" minX="215.0" minY="40.0" width="315.0" />
+            </viewport>
+        </ImageView>
+        <HBox layoutX="23.0" layoutY="672.0" prefHeight="71.0" prefWidth="323.0">
+            <children>
+            
+                <JFXButton fx:id="contactos" contentDisplay="TOP" onAction="#cambiarScene" prefHeight="103.0" prefWidth="112.0" style="-fx-background-color: #1565C0;" text="Contactos" textFill="WHITE">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="BOOK_OPEN" size="30" />
+               </graphic>
+                </JFXButton>
+                <JFXButton fx:id="agregar" contentDisplay="TOP" onAction="#cambiarScene" prefHeight="103.0" prefWidth="112.0" style="-fx-background-color: #1565C0;" text="Agregar" textFill="WHITE">
+                    <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="30" />
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="estadistica" contentDisplay="TOP" onAction="#cambiarScene" prefHeight="103.0" prefWidth="112.0" style="-fx-background-color: #1565C0;" text="Estadisticas" textFill="WHITE">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="VECTOR_POLYGON" size="30" />
+               </graphic>
+                </JFXButton>
+            </children>
+        </HBox>
+      <JFXDrawer fx:id="lienzo" layoutX="23.0" layoutY="52.0" prefHeight="614.0" prefWidth="323.0" />
+    </children>
+</AnchorPane>
