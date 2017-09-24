@@ -22,9 +22,5 @@ public class View {
         
         a.in(a.getRaiz());
         System.err.println(a.preorden(a.getRaiz()));
-        a.removerNodo(new Contacto("b", 6632094, "Por su casa", "Arvizso@hotmail.com"));
-
-        a.in(a.getRaiz());
-        System.err.println(a.preorden(a.getRaiz()));
     }
 }
