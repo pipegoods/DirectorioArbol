@@ -1,8 +1,11 @@
 
 package Vista;
 
-import Logica.ArbolDirectorio;
-import Logica.Contacto;
+import Logica.ManipulaDirectorio;
+import Logica.Nodo;
+import java.util.ArrayList;
+
+
 
 
 /**
@@ -11,16 +14,28 @@ import Logica.Contacto;
  */
 public class View {
     public static void main(String[] args) {
-        ArbolDirectorio a = new ArbolDirectorio();
-        a.agregarContacto(new Contacto("c", 6632094, "Por su casa", "Arvizso@hotmail.com"));
-        a.agregarContacto(new Contacto("z", 6632094, "Por su casa", "Arvizso@hotmail.com"));
-        a.agregarContacto(new Contacto("b", 6632094, "Por su casa", "Arvizso@hotmail.com"));
-        a.agregarContacto(new Contacto("a", 6632094, "Por su casa", "Arvizso@hotmail.com"));
-        a.agregarContacto(new Contacto("f", 6632094, "Por su casa", "Arvizso@hotmail.com"));
-        a.agregarContacto(new Contacto("g", 6632094, "Por su casa", "Arvizso@hotmail.com"));
-        a.agregarContacto(new Contacto("d", 6632094, "Por su casa", "Arvizso@hotmail.com"));
-        
-        a.in(a.getRaiz());
-        System.err.println(a.preorden(a.getRaiz()));
+        ManipulaDirectorio a = new ManipulaDirectorio();
+        a.agregarContacto("c", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("z", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("b", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("a", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("v", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("l", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("f", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("e", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("i", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("m", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("y", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("t", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("n", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("ch", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("k", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        ArrayList<Nodo> s = a.inorden();
+        for (Nodo nodo : s) {
+            System.out.print(nodo.getDatos().getNOMBRE()+",");
+        }
+        System.out.println("\nAltura: "+a.retornarAltura());
+        System.out.println("Cantidad: "+a.retornarCantidad());
+        System.out.println("CantidadHojas: "+a.retornarCantidadHojas());
     }
 }

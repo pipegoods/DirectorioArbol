@@ -13,12 +13,14 @@ public class ArbolDirectorio {
     private Nodo auxPadre;
     private boolean comp;
     private ArrayList<Nodo> recorridos = new ArrayList<>();
+    private int altura;
+    private int cant;
 
-    public ArrayList<Nodo> getRecorridos() {
+    public ArrayList<Nodo> getrecorridos() {
         return recorridos;
     }
 
-    public void setRecorridos(ArrayList<Nodo> recorridos) {
+    public void setrecorridos(ArrayList<Nodo> recorridos) {
         this.recorridos = recorridos;
     }
 
@@ -30,6 +32,10 @@ public class ArbolDirectorio {
     public ArbolDirectorio(Nodo raiz) {
         this.raiz = raiz;
         this.comp = false;
+    }
+
+    public int getAltura() {
+        return altura;
     }
 
     public Nodo getRaiz() {
@@ -75,15 +81,15 @@ public class ArbolDirectorio {
     }
 
     private boolean comprobarNombre(String nombre) {
-        Nodo Aux = this.raiz;
-        while (Aux != null) {
-            if (nombre.toUpperCase().equals(Aux.getDatos().getNOMBRE().toUpperCase())) {
+        Nodo aux = this.raiz;
+        while (aux != null) {
+            if (nombre.toUpperCase().equals(aux.getDatos().getNOMBRE().toUpperCase())) {
                 return true;
-            } else if (nombre.toUpperCase().compareTo(Aux.getDatos().getNOMBRE().toUpperCase()) > 0) {
-                Aux = Aux.getHijoDer();
+            } else if (nombre.toUpperCase().compareTo(aux.getDatos().getNOMBRE().toUpperCase()) > 0) {
+                aux = aux.getHijoDer();
             } else {
-                Aux = Aux.getHijoIzq();
-                if (Aux == null) {
+                aux = aux.getHijoIzq();
+                if (aux == null) {
                     return false;
                 }
             }
@@ -239,20 +245,9 @@ public class ArbolDirectorio {
             in(raiz.getHijoIzq());
             this.recorridos.add(raiz); //ArrayList
             in(raiz.getHijoDer());
-
         }
     }
 
-    public String preorden(Nodo raiz1) {
-        String m = "";
-        if (raiz1 != null) {
-            m = m + raiz1.getDatos().getNOMBRE() + ", ";
-            m = m + preorden(raiz1.getHijoIzq());
-            m = m + preorden(raiz1.getHijoDer());
-        }
-        return m;
-    }
-    
     public boolean removerNodo(Contacto eliminar){
         Nodo nodo = buscar(this.raiz, eliminar.getNOMBRE());
         return remove(nodo);
@@ -318,5 +313,36 @@ public class ArbolDirectorio {
         }
         return nodo;
     }
+    
+    public int retornarAltura() {
+        altura = 0;
+        retornarAltura(this.raiz, 0);
+        return altura;
+    }
 
+    private void retornarAltura(Nodo recorrido, int nivel) {
+        if (recorrido != null) {
+            retornarAltura(recorrido.getHijoIzq(), nivel + 1);
+            if (nivel > altura) {
+                altura = nivel;
+            }
+            retornarAltura(recorrido.getHijoDer(), nivel + 1);
+        }
+    }
+    
+    private void cantidadNodosHoja(Nodo recorrido) {
+        if (recorrido != null) {
+            if (recorrido.getHijoIzq()== null && recorrido.getHijoDer()== null) {
+                cant++;
+            }
+            cantidadNodosHoja(recorrido.getHijoIzq());
+            cantidadNodosHoja(recorrido.getHijoDer());
+        }
+    }
+
+    public int cantidadNodosHoja() {
+        cant = 0;
+        cantidadNodosHoja(this.raiz);
+        return cant;
+    }
 }
