@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXDrawer?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -39,6 +40,16 @@
                 </JFXButton>
             </children>
         </HBox>
-      <JFXDrawer fx:id="lienzo" layoutX="23.0" layoutY="52.0" prefHeight="614.0" prefWidth="323.0" />
+      <JFXDrawer fx:id="lienzo" layoutX="23.0" layoutY="52.0" prefHeight="614.0" prefWidth="323.0">
+         <children>
+            <ImageView cache="true" cacheHint="ROTATE" fitHeight="614.0" fitWidth="323.0" nodeOrientation="INHERIT" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../material-1-1000x563.jpg" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </ImageView>
+         </children></JFXDrawer>
     </children>
 </AnchorPane>

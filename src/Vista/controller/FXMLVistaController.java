@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Vista.controller;
 
 
@@ -40,15 +35,12 @@ public class FXMLVistaController implements Initializable {
         switch(btn.getText())
         {
             case "Contactos":
-                System.out.println("Contactos");
                 box = FXMLLoader.load(Index.class.getResource("fxml/FXMLContactos.fxml"));
                 break;
             case "Agregar":
-                System.out.println("Agregar");
                 box = FXMLLoader.load(Index.class.getResource("fxml/FXMLAgregar.fxml"));
                 break;
             case "Estadisticas":
-                System.out.println("Estadistica");
                 box = FXMLLoader.load(Index.class.getResource("fxml/FXMLEstadisticas.fxml"));
                 break;
         }
