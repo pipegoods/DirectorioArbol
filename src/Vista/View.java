@@ -16,20 +16,9 @@ public class View {
     public static void main(String[] args) {
         ManipulaDirectorio a = new ManipulaDirectorio();
         a.agregarContacto("a", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("z", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("b", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("a", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("v", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("l", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("a", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("a", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("a", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("a", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("y", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("t", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("n", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("ch", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("k", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        
+        System.err.println("Raiz: " + a.getArbol().getRaiz().toString());
+        a.removerContacto("a");
         ArrayList<Nodo> s = a.inorden();
         for (Nodo nodo : s) {
             System.out.print(nodo.getDatos().getNOMBRE()+",");

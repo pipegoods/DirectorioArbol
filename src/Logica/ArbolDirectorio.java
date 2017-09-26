@@ -248,29 +248,42 @@ public class ArbolDirectorio {
         }
     }
 
-    public boolean removerNodo(Contacto eliminar){
+    public boolean removerNodo(Contacto eliminar) {
         Nodo nodo = buscar(this.raiz, eliminar.getNOMBRE());
         return remove(nodo);
-        
+
     }
-    
+
     private boolean remove(Nodo nodo) {
         boolean tieneNodoDerecha = nodo.getHijoDer() != null;
         boolean tieneNodoIzquierda = nodo.getHijoIzq() != null;
         buscar(this.raiz, nodo.getDatos().getNOMBRE());
-        Nodo hijoIzquierdo = this.auxPadre.getHijoIzq();
-        Nodo hijoDerecho = this.auxPadre.getHijoDer();
+        Nodo hijoIzquierdo;
+        Nodo hijoDerecho;
+        if (nodo != this.raiz) {
+            hijoIzquierdo = this.auxPadre.getHijoIzq();
+            hijoDerecho = this.auxPadre.getHijoDer();
+        } else {
+            hijoIzquierdo = nodo.getHijoIzq();
+            hijoDerecho = nodo.getHijoDer();
+        }
 
         if (!tieneNodoDerecha && !tieneNodoIzquierda) {
-            if (hijoIzquierdo == nodo) {
-                this.auxPadre.setHijoIzq(null);
+            if (nodo != this.raiz) {
+                if (hijoIzquierdo == nodo) {
+                    this.auxPadre.setHijoIzq(null);
+                    return true;
+                }
+
+                if (hijoDerecho == nodo) {
+                    this.auxPadre.setHijoDer(null);
+                    return true;
+                }
+            } else{
+                this.raiz = null;
                 return true;
             }
 
-            if (hijoDerecho == nodo) {
-                this.auxPadre.setHijoDer(null);
-                return true;
-            }
             return false;
         }
 
@@ -298,7 +311,7 @@ public class ArbolDirectorio {
             if (nodoMasALaIzquierda != null) {
                 remove(nodoMasALaIzquierda);
                 nodo.setDatos(nodoMasALaIzquierda.getDatos());
-                
+
                 return true;
             }
             return false;
@@ -313,7 +326,7 @@ public class ArbolDirectorio {
         }
         return nodo;
     }
-    
+
     public int retornarAltura() {
         altura = 0;
         retornarAltura(this.raiz, 0);
@@ -329,10 +342,10 @@ public class ArbolDirectorio {
             retornarAltura(recorrido.getHijoDer(), nivel + 1);
         }
     }
-    
+
     private void cantidadNodosHoja(Nodo recorrido) {
         if (recorrido != null) {
-            if (recorrido.getHijoIzq()== null && recorrido.getHijoDer()== null) {
+            if (recorrido.getHijoIzq() == null && recorrido.getHijoDer() == null) {
                 cant++;
             }
             cantidadNodosHoja(recorrido.getHijoIzq());

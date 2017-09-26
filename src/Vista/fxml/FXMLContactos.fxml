@@ -21,7 +21,7 @@
             </Label>
             <AnchorPane layoutX="14.0" layoutY="107.0" prefHeight="496.0" prefWidth="298.0">
                <children>
-                  <JFXListView fx:id="tabla" expanded="true" layoutX="24.0" layoutY="43.0" minWidth="245.0" onMouseEntered="#expandirOn" onMouseExited="#expandirOff" prefHeight="411.0" prefWidth="245.0" styleClass="custom-jfx-list-view" stylesheets="@fxmlcontactos.css" />
+                  <JFXListView fx:id="tabla" expanded="true" layoutX="24.0" layoutY="43.0" maxWidth="245.0" minWidth="245.0" onMouseClicked="#abrirPOP" prefHeight="277.0" prefWidth="245.0" styleClass="custom-jfx-list-view" stylesheets="@fxmlcontactos.css" />
                </children>
             </AnchorPane>
          </children>

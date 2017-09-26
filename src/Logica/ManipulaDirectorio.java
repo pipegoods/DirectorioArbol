@@ -27,6 +27,10 @@ public class ManipulaDirectorio {
         return this.directorio.removerNodo(new Contacto(nombre, 0, "", ""));
     }
     
+    public ArbolDirectorio getArbol(){
+        return directorio;
+    }
+    
     public ArrayList<Nodo> inorden(){
         this.directorio.getrecorridos().clear();
         this.directorio.in(this.directorio.getRaiz());
