@@ -13,8 +13,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
-import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
 
 /**
@@ -41,27 +39,33 @@ public class FXMLAgregarController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       clearCell();
+        clearCell();
     }
 
     @FXML
     void guardar(ActionEvent event) {
         String nombre = txt_nombre.getText();
-        long tel = Long.parseLong(txt_tel.getText());
-        String dir = txt_dir.getText();
-        String email = txt_email.getText();
-        if (Index.DIR.agregarContacto(nombre, tel, dir, email)) {
-            Notifications not = Index.notFX("Accion exitosa", "Contacto guardado correctamente");
-            not.showConfirm();
-            System.out.println("Cantidad: " + Index.DIR.retornarCantidad());
+        String t = txt_tel.getText() == null ? "0" : txt_tel.getText();
+        long tel = Long.parseLong(t);
+        String dir = txt_dir.getText() == null ? " N/A " :  txt_dir.getText();
+        String email = txt_email.getText() == null ? " N/A " :  txt_email.getText();
+        if (nombre != null) {
+            if (Index.DIR.agregarContacto(nombre, tel, dir, email)) {
+                Notifications not = Index.notFX("Accion exitosa", "Contacto guardado correctamente");
+                not.showConfirm();
+            } else {
+                Notifications not = Index.notFX("Accion Denegada", "El contacto ya existe");
+                not.showError();
+            }
+            clearCell();
         } else {
-            Notifications not = Index.notFX("Accion Denegada", "El contacto ya existe");
+            Notifications not = Index.notFX("Accion Denegada", "Es importante colocar un nombre!");
             not.showError();
         }
-        clearCell();
+
     }
-    
-    private void clearCell(){
+
+    private void clearCell() {
         txt_nombre.setText(null);
         txt_tel.setText(null);
         txt_dir.setText(null);
