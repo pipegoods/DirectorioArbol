@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="323.0" style="-fx-background-color: #B2EBF2;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vista.controller.FXMLContactosController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="323.0" style="-fx-background-color: #B2EBF2;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vista.controller.FXMLAgregarController">
    <children>
       <AnchorPane prefHeight="623.0" prefWidth="323.0">
          <children>
@@ -24,13 +23,13 @@
             </Label>
             <AnchorPane layoutX="28.0" layoutY="121.0" prefHeight="403.0" prefWidth="267.0">
                <children>
-                  <JFXTextField layoutX="21.0" layoutY="89.0" prefHeight="24.0" prefWidth="231.0" promptText="Nombre *" />
-                  <JFXTextField layoutX="21.0" layoutY="308.0" prefHeight="24.0" prefWidth="231.0" promptText="Correo Electronico" />
-                  <JFXTextField layoutX="21.0" layoutY="157.0" prefHeight="24.0" prefWidth="231.0" promptText="Telefono" />
-                  <JFXTextArea layoutX="18.0" layoutY="225.0" prefHeight="37.0" prefWidth="231.0" promptText="Direccion" />
+                  <JFXTextField fx:id="txt_nombre" layoutX="21.0" layoutY="89.0" prefHeight="24.0" prefWidth="231.0" promptText="Nombre *" />
+                  <JFXTextField fx:id="txt_email" layoutX="21.0" layoutY="308.0" prefHeight="24.0" prefWidth="231.0" promptText="Correo Electronico" />
+                  <JFXTextField fx:id="txt_tel" layoutX="21.0" layoutY="157.0" prefHeight="24.0" prefWidth="231.0" promptText="Telefono" />
+                  <JFXTextArea fx:id="txt_dir" layoutX="18.0" layoutY="225.0" prefHeight="37.0" prefWidth="231.0" promptText="Direccion" />
                </children>
             </AnchorPane>
-            <JFXButton fx:id="contactos" contentDisplay="TOP" layoutX="53.0" layoutY="496.0"  prefHeight="37.0" prefWidth="231.0" style="-fx-background-color: #1565C0;" text="Guardar" textFill="WHITE">
+            <JFXButton contentDisplay="TOP" layoutX="53.0" layoutY="496.0" onAction="#guardar" prefHeight="37.0" prefWidth="231.0" style="-fx-background-color: #1565C0;" text="Guardar" textFill="WHITE">
                <graphic>
                   <MaterialDesignIconView fill="WHITE" glyphName="PLUS_CIRCLE" size="30" />
                </graphic>

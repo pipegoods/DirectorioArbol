@@ -15,16 +15,16 @@ import java.util.ArrayList;
 public class View {
     public static void main(String[] args) {
         ManipulaDirectorio a = new ManipulaDirectorio();
-        a.agregarContacto("c", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("a", 6632094, "Por su casa", "Arvizso@hotmail.com");
         a.agregarContacto("z", 6632094, "Por su casa", "Arvizso@hotmail.com");
         a.agregarContacto("b", 6632094, "Por su casa", "Arvizso@hotmail.com");
         a.agregarContacto("a", 6632094, "Por su casa", "Arvizso@hotmail.com");
         a.agregarContacto("v", 6632094, "Por su casa", "Arvizso@hotmail.com");
         a.agregarContacto("l", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("f", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("e", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("i", 6632094, "Por su casa", "Arvizso@hotmail.com");
-        a.agregarContacto("m", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("a", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("a", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("a", 6632094, "Por su casa", "Arvizso@hotmail.com");
+        a.agregarContacto("a", 6632094, "Por su casa", "Arvizso@hotmail.com");
         a.agregarContacto("y", 6632094, "Por su casa", "Arvizso@hotmail.com");
         a.agregarContacto("t", 6632094, "Por su casa", "Arvizso@hotmail.com");
         a.agregarContacto("n", 6632094, "Por su casa", "Arvizso@hotmail.com");
