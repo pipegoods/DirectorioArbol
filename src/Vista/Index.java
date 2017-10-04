@@ -12,7 +12,7 @@ import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
 
 public class Index extends Application {
-
+    /**Variable publica estatica: Arbol!!*/
     public static ManipulaDirectorio DIR = new ManipulaDirectorio();
 
     @Override
@@ -26,7 +26,12 @@ public class Index extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+    /**
+     * Metodo de notificaciones
+     * @param titulo de la notificacion
+     * @param texto contenido de la notificacion
+     * @return la notificacion
+     */
     public static Notifications notFX(String titulo, String texto){
         Notifications not = Notifications.create()
                     .title(titulo)

@@ -87,12 +87,12 @@
             </Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Label layoutX="43.0" layoutY="14.0" text="NI">
+                  <Label fx:id="feRaiz" layoutX="61.0" layoutY="14.0" text="0">
                      <font>
                         <Font name="KacstFarsi" size="60.0" />
                      </font>
                   </Label>
-                  <Label layoutX="63.0" layoutY="107.0" text="NI" />
+                  <Label layoutX="56.0" layoutY="106.0" text="FE Raiz" />
                </children>
             </Pane>
          </children>

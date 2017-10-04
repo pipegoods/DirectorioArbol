@@ -15,7 +15,7 @@ import javafx.scene.layout.VBox;
 
 
 /**
- * FXML Controller class
+ * FXML VistaController class
  *
  * @author andresvizcaino
  */
@@ -27,7 +27,9 @@ public class FXMLVistaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }
-
+    /**
+     * Metodo listener, cambia la ecena segun lo escogido por el usuario
+     */
     @FXML
     void cambiarScene(ActionEvent event) throws IOException {
         JFXButton btn = (JFXButton) event.getSource();

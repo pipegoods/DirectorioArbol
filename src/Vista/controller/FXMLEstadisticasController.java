@@ -13,7 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 /**
- * FXML Controller class
+ * FXML EstadisticasController class
  *
  * @author andresvizcaino
  */
@@ -32,6 +32,9 @@ public class FXMLEstadisticasController implements Initializable {
 
     @FXML
     private Label txt_cantidad;
+    
+    @FXML
+    private Label feRaiz;
     /**
      * Initializes the controller class.
      */
@@ -39,13 +42,17 @@ public class FXMLEstadisticasController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         refresh();
     }    
-    
+    /**
+     * Actualiza las estadisticas segun el arbol
+     */
     private void refresh(){
         txt_hojas.setText(String.valueOf(Index.DIR.retornarCantidadHojas()));
         txt_padres.setText(String.valueOf(Index.DIR.retornarCantidad() - Index.DIR.retornarCantidadHojas()));
         txt_niveles.setText(String.valueOf(Index.DIR.retornarAltura()-1) );
         txt_altura.setText(String.valueOf(Index.DIR.retornarAltura()));
         txt_cantidad.setText(String.valueOf(Index.DIR.retornarCantidad()));
+        int feR = Index.DIR.getArbol().getRaiz() == null ? 0 : Index.DIR.getArbol().getRaiz().getFacE() ;
+        feRaiz.setText(String.valueOf(feR));
     }
     
 }

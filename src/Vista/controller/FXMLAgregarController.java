@@ -16,7 +16,7 @@ import javafx.fxml.Initializable;
 import org.controlsfx.control.Notifications;
 
 /**
- * FXML Controller class
+ * FXML AgregarController class
  *
  * @author andresvizcaino
  */
@@ -42,13 +42,17 @@ public class FXMLAgregarController implements Initializable {
         clearCell();
     }
 
+    /**
+     * Metodo guardar Guarda cada atributo del formulario de registro y llama a
+     * la funcion manipulaDirectorio 'agregarContacto'
+     */
     @FXML
     void guardar(ActionEvent event) {
         String nombre = txt_nombre.getText();
         String t = txt_tel.getText() == null ? "0" : txt_tel.getText();
         long tel = Long.parseLong(t);
-        String dir = txt_dir.getText() == null ? " N/A " :  txt_dir.getText();
-        String email = txt_email.getText() == null ? " N/A " :  txt_email.getText();
+        String dir = txt_dir.getText() == null ? " N/A " : txt_dir.getText();
+        String email = txt_email.getText() == null ? " N/A " : txt_email.getText();
         if (nombre != null) {
             if (Index.DIR.agregarContacto(nombre, tel, dir, email)) {
                 Notifications not = Index.notFX("Accion exitosa", "Contacto guardado correctamente");
@@ -65,6 +69,9 @@ public class FXMLAgregarController implements Initializable {
 
     }
 
+    /**
+     * Metodo clear Limpia las celdas del formulario
+     */
     private void clearCell() {
         txt_nombre.setText(null);
         txt_tel.setText(null);

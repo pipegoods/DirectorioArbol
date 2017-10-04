@@ -18,7 +18,6 @@ import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,7 +33,7 @@ import javafx.scene.layout.VBox;
 import org.controlsfx.control.Notifications;
 
 /**
- * FXML Controller class
+ * FXML ContactosController class
  *
  * @author andresvizcaino
  */
@@ -42,7 +41,7 @@ public class FXMLContactosController implements Initializable {
 
     @FXML
     private JFXListView<Label> tabla;
-    private JFXPopup pop = new JFXPopup();
+    private final JFXPopup pop = new JFXPopup();
     private String nom;
     @FXML
     private JFXTextField txt_buscar;
@@ -54,6 +53,7 @@ public class FXMLContactosController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         txt_buscar.setDisable(true);
         initTabla();
+        // Listener de la tabla
         tabla.getSelectionModel().selectedItemProperty()
                 .addListener((ObservableValue<? extends Label> observable, Label oldValue, Label newValue) -> {
                     nom = newValue.getText().replace("   ", "") != null ? newValue.getText().replace("   ", "") : "";
@@ -63,6 +63,9 @@ public class FXMLContactosController implements Initializable {
 
     }
 
+    /**
+     * Metodo initPop Crear la opcion del click derecho de la tabla
+     */
     private void initPopup() {
         JFXButton elim = new JFXButton("Eliminar Contacto", new MaterialDesignIconView(MaterialDesignIcon.DELETE));
         JFXButton showI = new JFXButton("Ver en detalle", new MaterialDesignIconView(MaterialDesignIcon.PIG));
@@ -78,6 +81,9 @@ public class FXMLContactosController implements Initializable {
         pop.setPopupContent(box);
     }
 
+    /**
+     * Metodo clickDerecho Abre el pop
+     */
     @FXML
     void abrirPOP(MouseEvent event) {
         if (event.getButton() == MouseButton.SECONDARY && !"No hay informacion".equals(nom)) {
@@ -85,6 +91,9 @@ public class FXMLContactosController implements Initializable {
         }
     }
 
+    /**
+     * Metodo eliminar LLama al metodo 'eliminarContacto' de manipulaDirectorio
+     */
     private void eliminar() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Seguro quieres eliminar a: " + nom + " ?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
         alert.showAndWait();
@@ -103,6 +112,9 @@ public class FXMLContactosController implements Initializable {
         }
     }
 
+    /**
+     * Metodo initTAbla Actualiza la tabla con la lista de contactos
+     */
     private void initTabla() {
         tabla.getItems().clear();
         Label a = new Label("No hay informacion", new FontAwesomeIconView(FontAwesomeIcon.ANGELLIST));
@@ -119,6 +131,10 @@ public class FXMLContactosController implements Initializable {
         }
     }
 
+    /**
+     * Metodo mostrarInformacion Muestra la informacion del contacto
+     * seleccionado
+     */
     private void showInformation() {
         if (nom != null) {
             Contacto info = Index.DIR.buscar(nom);
@@ -134,6 +150,10 @@ public class FXMLContactosController implements Initializable {
 
     }
 
+    /**
+     * Metodo buscar evento KeyTyped, cada vez que el usuario digite busca en la
+     * listade contacto por palabra clave
+     */
     @FXML
     void buscar(KeyEvent event) {
         tabla.getItems().clear();
@@ -152,6 +172,9 @@ public class FXMLContactosController implements Initializable {
         }
     }
 
+    /**
+     * Pequeña informacion!
+     */
     @FXML
     void darInfo(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
