@@ -19,7 +19,9 @@ public class Index extends Application {
     public void start(Stage primaryStage) throws IOException {
         Object page = FXMLLoader.load(Index.class.getResource("fxml/FXMLVista.fxml"));
         Scene scene = new Scene((Parent) page);
+        
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
