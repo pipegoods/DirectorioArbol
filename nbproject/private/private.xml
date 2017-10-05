@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/andresvizcaino/NetBeansProjects/DirectorioArbol/src/Logica/Nodo.java</file>
-            <file>file:/home/andresvizcaino/NetBeansProjects/DirectorioArbol/src/Vista/View.java</file>
-            <file>file:/home/andresvizcaino/NetBeansProjects/DirectorioArbol/src/Logica/ArbolDirectorio.java</file>
-            <file>file:/home/andresvizcaino/NetBeansProjects/DirectorioArbol/src/Logica/ManipulaDirectorio.java</file>
-            <file>file:/home/andresvizcaino/NetBeansProjects/DirectorioArbol/src/Logica/Contacto.java</file>
+            <file>file:/C:/Users/pipem/OneDrive/Documentos/NetBeansProjects/DirectorioArbol/src/Vista/fxml/FXMLEstadisticas.fxml</file>
+            <file>file:/C:/Users/pipem/OneDrive/Documentos/NetBeansProjects/DirectorioArbol/src/Vista/Index.java</file>
+            <file>file:/C:/Users/pipem/OneDrive/Documentos/NetBeansProjects/DirectorioArbol/src/Vista/controller/FXMLContactosController.java</file>
+            <file>file:/C:/Users/pipem/OneDrive/Documentos/NetBeansProjects/DirectorioArbol/src/Logica/Nodo.java</file>
         </group>
     </open-files>
 </project-private>

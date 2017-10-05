@@ -10,6 +10,7 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -40,6 +41,15 @@ public class FXMLAgregarController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         clearCell();
+        
+        txt_tel.lengthProperty().addListener((ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
+            if (newValue.intValue() > oldValue.intValue()) {
+                char ch = txt_tel.getText().charAt(oldValue.intValue());
+                if (!(ch >= '0' && ch <= '9')) {
+                    txt_tel.setText(txt_tel.getText().substring(0, txt_tel.getText().length() - 1));
+                }
+            }
+        });
     }
 
     /**
